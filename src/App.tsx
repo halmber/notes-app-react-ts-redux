@@ -1,7 +1,8 @@
 import "./App.css";
+import NotesPage from "./pages/NotesPage";
 
 function App() {
-    return <div className="App">Hello</div>;
+    return <NotesPage />;
 }
 
 export default App;

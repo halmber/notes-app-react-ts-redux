@@ -1,7 +1,9 @@
-import { Category } from "../types/types";
+import { CategoryType } from "../types/types";
 
-export const NOTE_TABLE_HEADERS = ["Name", "Created", "Category", "Content", "Dates", "archiveBtn"];
+export const NOTES_TABLE_STRING_HEADERS = ["Name", "Created", "Category", "Content", "Dates"];
 
 export const SUMMARY_TABLE_HEADERS = ["Note category", "Active", "Archived"];
 
-export const NOTE_CATEGORIES: Category[] = ["Task", "Plan", "Random Thought", "Idea"];
+export const NOTES_CATEGORIES: CategoryType[] = ["Task", "Plan", "Random Thought", "Idea"];
+
+export const regexForGetDates = /\d{1,2}([\/.-])\d{1,2}\1\d{2,4}/g;

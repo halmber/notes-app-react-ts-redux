@@ -1,0 +1,40 @@
+.action-cell {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 0.5rem;
+}
+
+.action-cell svg {
+    fill: #878787;
+    width: 25px;
+}
+
+.action-cell svg:hover {
+    fill: #adadad;
+}
+
+th .archive-icon {
+    width: 25px;
+    display: block;
+    margin: 0 auto;
+    fill: white;
+}
+
+th .archive-icon:hover {
+    fill: #cbd0ce;
+}
+
+.action-panel {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2.5rem;
+}
+
+.notes-container {
+    max-width: 60rem;
+    width: 100%;
+    margin: 0 auto;
+}

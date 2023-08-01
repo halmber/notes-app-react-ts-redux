@@ -28,16 +28,19 @@ export const notesSlice = createSlice({
                 state.notes.splice(index, 1);
             }
         },
-        handleClickArchive(state, action: PayloadAction<number>) {
+        handleArchive(state, action: PayloadAction<number>) {
             const index = state.notes.findIndex((note) => note.created === action.payload);
 
             if (index !== -1) {
                 state.notes[index].status = state.tableView === Status.ACTIVE ? Status.ARCHIVED : Status.ACTIVE;
             }
         },
+        switchTableView(state, action: PayloadAction<void>) {
+            state.tableView = state.tableView === Status.ACTIVE ? Status.ARCHIVED : Status.ACTIVE;
+        },
     },
 });
 
-export const { addNote, editNote, deleteNote, handleClickArchive } = notesSlice.actions;
+export const { addNote, editNote, deleteNote, handleArchive, switchTableView } = notesSlice.actions;
 
 export default notesSlice.reducer;

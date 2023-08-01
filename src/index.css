@@ -3,4 +3,59 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+}
+
+h1,
+h2 {
+    margin: 0;
+}
+
+table {
+    border-spacing: 0;
+    color: white;
+    font-size: 1rem;
+    border-spacing: 0 1em;
+    width: 100%;
+}
+
+thead {
+    background-color: #999999;
+}
+
+tbody {
+    color: black;
+}
+
+td,
+th {
+    padding: 0.625rem;
+}
+
+td {
+    background-color: #e8eaf5;
+}
+
+th:first-child,
+td:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+th:last-child,
+td:last-child {
+    border-radius: 0 5px 5px 0;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #999999;
+    color: white;
 }

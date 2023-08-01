@@ -6,4 +6,4 @@ export const SUMMARY_TABLE_HEADERS = ["Note category", "Active", "Archived"];
 
 export const NOTES_CATEGORIES: CategoryType[] = ["Task", "Plan", "Random Thought", "Idea"];
 
-export const regexForGetDates = /\d{1,2}([\/.-])\d{1,2}\1\d{2,4}/g;
+export const REGEX_FOR_MATCH_DATES = /\d{1,2}([\/.-])\d{1,2}\1\d{2,4}/g;

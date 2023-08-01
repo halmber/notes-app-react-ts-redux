@@ -3,7 +3,7 @@ export enum Status {
     ARCHIVED = "ARCHIVED",
 }
 
-export type CategoryType = "Idea" | "Task" | "Plan" | "Random Thought";
+export type CategoryType = "Idea" | "Task" | "Plan" | "Random Thought" | "";
 
 export interface Note {
     name: string;

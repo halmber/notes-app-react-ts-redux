@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { TableDataType, TableHeaderType } from "../types/types";
 
 interface TableProps {
@@ -6,7 +5,7 @@ interface TableProps {
     data: TableDataType;
 }
 
-const Table: FC<TableProps> = ({ headers, data }) => {
+const Table: React.FC<TableProps> = ({ headers, data }) => {
     return (
         <table>
             <thead>

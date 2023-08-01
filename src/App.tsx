@@ -1,8 +1,8 @@
 import "./App.css";
 import NotesPage from "./pages/NotesPage";
 
-function App() {
+const App: React.FC = () => {
     return <NotesPage />;
-}
+};
 
 export default App;

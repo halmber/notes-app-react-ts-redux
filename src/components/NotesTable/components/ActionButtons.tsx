@@ -1,4 +1,4 @@
-import { Note } from "../../types/types";
+import { Note } from "../../../types/types";
 import { ArchiveIcon, DeleteIcon, EditIcon } from "./ActionIcons";
 
 interface ActionButtonsProps {

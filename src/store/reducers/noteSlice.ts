@@ -12,7 +12,7 @@ export const notesSlice = createSlice({
     initialState,
     reducers: {
         addNote(state, action: PayloadAction<Note>) {
-            state.notes.push(action.payload);
+            state.notes.unshift(action.payload);
         },
         editNote(state, action: PayloadAction<Note>) {
             const index = state.notes.findIndex((note) => note.created === action.payload.created);

@@ -1,20 +1,22 @@
-import { FC } from "react";
 import { Note, Status, TableDataType, TableHeaderType } from "../../types/types";
 import Table from "../Table";
 import { NOTES_TABLE_STRING_HEADERS } from "../../constants/constants";
-import { getLocalStringDate } from "./getLocalStringDate";
+import { getLocalStringDate } from "../../shared/functions/getLocalStringDate";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { deleteNote, editNote, handleArchive, switchTableView } from "../../store/reducers/noteSlice";
-import ActionButtons from "./ActionButtons";
-import { ArchiveIcon } from "./ActionIcons";
+import ActionButtons from "./components/ActionButtons";
+import { ArchiveIcon } from "./components/ActionIcons";
+import ModalForm from "../ModalForm";
+import { useState } from "react";
 
 interface NotesTableProps {
     notes: Note[];
 }
 
-const NotesTable: FC<NotesTableProps> = ({ notes }) => {
+const NotesTable: React.FC<NotesTableProps> = ({ notes }) => {
     const tableView = useAppSelector((store) => store.notes.tableView);
     const dispatch = useAppDispatch();
+    const [noteToEdit, setNoteToEdit] = useState<Note | null>(null);
 
     const preparedNotes: Note[] = notes.filter(
         (note) => note.status === (tableView === Status.ACTIVE ? Status.ACTIVE : Status.ARCHIVED),
@@ -22,6 +24,15 @@ const NotesTable: FC<NotesTableProps> = ({ notes }) => {
 
     const changeTableView = () => {
         dispatch(switchTableView());
+    };
+
+    const handleClickEdit = (note: Note) => {
+        if (noteToEdit) return;
+        setNoteToEdit(note);
+    };
+
+    const onCloseModal = () => {
+        setNoteToEdit(null);
     };
 
     const handleEdit = (note: Note) => {
@@ -45,7 +56,7 @@ const NotesTable: FC<NotesTableProps> = ({ notes }) => {
             note.dates.join(", "),
             <ActionButtons
                 note={note}
-                handleEdit={handleEdit}
+                handleEdit={handleClickEdit}
                 handleClickArchive={handleClickArchive}
                 handleDelete={handleDelete}
             />,
@@ -60,6 +71,15 @@ const NotesTable: FC<NotesTableProps> = ({ notes }) => {
     return (
         <>
             <Table headers={notesTableHeader} data={notesTableData} />
+            {noteToEdit && (
+                <ModalForm
+                    title="Edit note"
+                    open={Boolean(noteToEdit)}
+                    existingNote={noteToEdit}
+                    onConfirm={handleEdit}
+                    onClose={onCloseModal}
+                />
+            )}
         </>
     );
 };

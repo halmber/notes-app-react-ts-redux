@@ -1,0 +1,89 @@
+.action-cell {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 0.5rem;
+}
+
+.action-cell svg {
+    fill: #878787;
+    width: 25px;
+}
+
+.action-cell svg:hover {
+    fill: #adadad;
+}
+
+th .archive-icon {
+    width: 25px;
+    display: block;
+    margin: 0 auto;
+    fill: white;
+}
+
+th .archive-icon:hover {
+    fill: #cbd0ce;
+}
+
+.action-panel {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2.5rem;
+}
+
+.notes-container {
+    max-width: 60rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.modal-title {
+    margin: 0 0 0.5rem 0;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.modal-form {
+    min-width: 400px;
+    background-color: white;
+    padding: 5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.modal-inputs-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-btn-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.entering {
+    animation: fadeIn 0.3s;
+}

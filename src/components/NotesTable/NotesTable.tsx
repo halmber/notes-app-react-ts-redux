@@ -72,13 +72,7 @@ const NotesTable: React.FC<NotesTableProps> = ({ notes }) => {
         <>
             <Table headers={notesTableHeader} data={notesTableData} />
             {noteToEdit && (
-                <ModalForm
-                    title="Edit note"
-                    open={Boolean(noteToEdit)}
-                    existingNote={noteToEdit}
-                    onConfirm={handleEdit}
-                    onClose={onCloseModal}
-                />
+                <ModalForm title="Edit note" existingNote={noteToEdit} onConfirm={handleEdit} onClose={onCloseModal} />
             )}
         </>
     );

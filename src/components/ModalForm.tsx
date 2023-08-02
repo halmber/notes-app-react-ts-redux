@@ -4,13 +4,12 @@ import { getDatesFromContent } from "../shared/functions/getDatesFromContent";
 
 interface ModalFormProps {
     title: string;
-    open: boolean;
     onConfirm: (note: Note) => void;
     onClose: () => void;
     existingNote: Note | null;
 }
 
-const ModalForm: React.FC<ModalFormProps> = ({ title, open, onConfirm, onClose, existingNote }) => {
+const ModalForm: React.FC<ModalFormProps> = ({ title, onConfirm, onClose, existingNote }) => {
     const [name, setName] = useState<string>(existingNote?.name || "");
     const [category, setCategory] = useState<CategoryType>(existingNote?.category || "");
     const [content, setContent] = useState<string>(existingNote?.content || "");
@@ -37,8 +36,8 @@ const ModalForm: React.FC<ModalFormProps> = ({ title, open, onConfirm, onClose, 
         onClose();
     };
 
-    return open ? (
-        <div className="modal">
+    return (
+        <div className={`modal entering`}>
             <form className="modal-form" onSubmit={handleSubmit}>
                 <h2 className="modal-title">{title}</h2>
                 <div className="modal-inputs-container">
@@ -62,7 +61,7 @@ const ModalForm: React.FC<ModalFormProps> = ({ title, open, onConfirm, onClose, 
                 </div>
             </form>
         </div>
-    ) : null;
+    );
 };
 
 export default ModalForm;

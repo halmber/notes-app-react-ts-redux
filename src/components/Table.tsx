@@ -6,6 +6,28 @@ interface TableProps {
 }
 
 const Table: React.FC<TableProps> = ({ headers, data }) => {
+    const renderTableRows = () => {
+        if (data.length === 0) {
+            return (
+                <tr>
+                    <td className="text-center" colSpan={headers.length}>
+                        <p className="text-gray-400">No data yet</p>
+                    </td>
+                </tr>
+            );
+        }
+
+        return data.map((rowItem, indexRow) => (
+            <tr key={indexRow}>
+                {rowItem.map((dataItem, indexData) => (
+                    <td className="bg-[#e8eaf5] p-2.5 first:rounded-l-md last:rounded-r-md" key={indexData}>
+                        {dataItem}
+                    </td>
+                ))}
+            </tr>
+        ));
+    };
+
     return (
         <table className="w-full text-white text-base border-separate border-spacing-y-4">
             <thead className="bg-[#999999]">
@@ -17,17 +39,7 @@ const Table: React.FC<TableProps> = ({ headers, data }) => {
                     ))}
                 </tr>
             </thead>
-            <tbody className="text-black">
-                {data.map((rowItem, indexRow) => (
-                    <tr key={indexRow}>
-                        {rowItem.map((dataItem, indexData) => (
-                            <td className="bg-[#e8eaf5] p-2.5 first:rounded-l-md last:rounded-r-md" key={indexData}>
-                                {dataItem}
-                            </td>
-                        ))}
-                    </tr>
-                ))}
-            </tbody>
+            <tbody className="text-black">{renderTableRows()}</tbody>
         </table>
     );
 };

@@ -37,10 +37,10 @@ const ModalForm: React.FC<ModalFormProps> = ({ title, onConfirm, onClose, existi
     };
 
     return (
-        <div className={`modal entering`}>
-            <form className="modal-form" onSubmit={handleSubmit}>
-                <h2 className="modal-title">{title}</h2>
-                <div className="modal-inputs-container">
+        <div className="w-full h-full flex items-center justify-center bg-black bg-opacity-50 fixed left-0 top-0 entering">
+            <form className="min-w-[25rem] w-[37.5rem] bg-white p-20 text-base rounded-md" onSubmit={handleSubmit}>
+                <h2>{title}</h2>
+                <div className="w-full flex justify-between">
                     <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
                     <select value={category} onChange={(e) => setCategory(e.target.value as CategoryType)}>
                         <option value="">Select category</option>
@@ -50,12 +50,23 @@ const ModalForm: React.FC<ModalFormProps> = ({ title, onConfirm, onClose, existi
                         <option value="Plan">Plan</option>
                     </select>
                 </div>
-                <textarea placeholder="Content" rows={5} value={content} onChange={(e) => setContent(e.target.value)} />
-                <div className="modal-btn-container">
-                    <button type="submit" disabled={disabled} title={disabled ? "You must fill in all the fields" : ""}>
+                <textarea
+                    className="w-full resize-none mt-2 overflow-auto"
+                    placeholder="Content"
+                    rows={5}
+                    value={content}
+                    onChange={(e) => setContent(e.target.value)}
+                />
+                <div className="flex gap-2">
+                    <button
+                        className="bg-[#f0f0f0]"
+                        type="submit"
+                        disabled={disabled}
+                        title={disabled ? "You must fill in all the fields" : ""}
+                    >
                         Submit
                     </button>
-                    <button type="button" onClick={onClose}>
+                    <button className="bg-[#f0f0f0]" type="button" onClick={onClose}>
                         Cancel
                     </button>
                 </div>

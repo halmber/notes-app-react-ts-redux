@@ -65,7 +65,7 @@ const NotesTable: React.FC<NotesTableProps> = ({ notes }) => {
 
     const notesTableHeader: TableHeaderType = [
         ...NOTES_TABLE_STRING_HEADERS,
-        <ArchiveIcon handleClick={changeTableView} />,
+        <ArchiveIcon handleClick={changeTableView} className="w-6 block m-auto fill-white hover:fill-[#cbd0ce]" />,
     ];
 
     return (

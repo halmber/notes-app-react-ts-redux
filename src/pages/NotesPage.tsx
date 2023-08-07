@@ -20,9 +20,9 @@ const NotesPage: React.FC = () => {
     };
 
     return (
-        <div className="notes-container">
-            <h1>Notes app</h1>
-            <div className="action-panel">
+        <div className="max-w-5xl w-full m-auto">
+            <h1 className="text-3xl font-bold">Notes app</h1>
+            <div className="w-full flex justify-between items-center h-10">
                 <h2>{tableView === Status.ARCHIVED ? "Archived notes" : ""}</h2>
                 <button onClick={handleClickAdd}>Add note</button>
             </div>

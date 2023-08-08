@@ -8,7 +8,7 @@ Check out the live demo of the app: [Notes App Demo](https://halmber.github.io/n
 
 ## Storybook
 
-Explore the components using Storybook: [Storybook Demo](https://64d25afad8e6e4770da5f502-tkvzngtzwa.chromatic.com/?path=/docs/notes-notespage--docs)
+Explore the components using Storybook (use it with Chrome): [Storybook Demo](https://64d25afad8e6e4770da5f502-tkvzngtzwa.chromatic.com/?path=/docs/notes-notespage--docs)
 
 ## Features
 

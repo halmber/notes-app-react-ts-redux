@@ -1,16 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Table from "../components/Table";
 
+/** A component that displays data in a table format with different headers and rows. */
 const meta = {
     component: Table,
     title: "Notes/Table",
     tags: ["autodocs"],
     argTypes: {
         headers: {
-            description: "Array of headers. Contains arrays of strings or JSX elements",
+            description:
+                "An array that contains the headers for each column of the table in the form of a string. May contain a JSX element in the form of a button.",
         },
         data: {
-            description: "Array of data. Contains arrays of strings or JSX elements",
+            description:
+                "An array of arrays that contains the data for each row of the table in the form of a string. May contain a JSX element in the form of a buttons.",
         },
     },
 } satisfies Meta<typeof Table>;
@@ -20,7 +23,7 @@ type Story = StoryObj<typeof meta>;
 
 const commonHeaders = ["Header 1", "Header 2", "Header 3", "Header 4", "Header 5", "Header 6"];
 
-/** The Table component is used to draw data in a convenient table form  */
+/** A variation to display a table with data. Uses the headers and data array passed to it to create a table.  */
 export const Primary: Story = {
     args: {
         headers: commonHeaders,
@@ -28,7 +31,7 @@ export const Primary: Story = {
     },
 };
 
-/** The empty Table component which displaying when there is no data  */
+/** A variation to display an empty table. It also uses the headers passed into it, but the data array is empty.  */
 export const Empty: Story = {
     args: {
         headers: commonHeaders,

@@ -36,7 +36,7 @@ export const Primary: Story = {
     args: {
         note: {
             created: new Date().getTime(),
-            name: "Git",
+            name: "Budget",
             category: "Idea",
             content: "Review monthly expenses and create a budget for the next month by 31.07.23",
             dates: ["31.07.23"],

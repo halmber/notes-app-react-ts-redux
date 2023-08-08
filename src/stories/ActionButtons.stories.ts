@@ -3,6 +3,7 @@ import ActionButtons from "../components/NotesTable/components/ActionButtons";
 import { Status } from "../types/types";
 import { action } from "@storybook/addon-actions";
 
+/** The primary view of the ActionButtons component which use in the table cell. A component displays action buttons for a note. The ActionButtons allows you to interact with notes with edit, archive, and delete buttons, and can be used to display actions for each note in a convenient way. */
 const meta = {
     component: ActionButtons,
     title: "Notes/ActionButtons",
@@ -11,18 +12,20 @@ const meta = {
         layout: "centered",
     },
     argTypes: {
-        note: { description: "Note object which use in whole project" },
+        note: { description: "The Note object for which the action buttons are displayed." },
         handleEdit: {
-            description: "A function that changes the fields of a Note object. You can use it to edit your notes.",
+            description:
+                "A function that is called when the edit button is clicked. It gets the note object for editing. Designed to open a modal window and transfer the selected Note to it.",
             action: "handleEdit",
         },
         handleClickArchive: {
-            description: "A function that changes the status field in the Note object. Archives or unarchives a note.",
+            description:
+                "The function that is called when the archive button is pressed. It gets the note id to archive or unarchive. Must change the status field in the Note object.",
             action: "handleClickArchive",
         },
         handleDelete: {
             description:
-                "A function that returns an object from an array of all notes. Implements the function of deleting a note.",
+                "A function that is called when the delete button is pressed. It gets the note creation id and deletes Notes with this id.",
             action: "handleDelete",
         },
     },
@@ -31,7 +34,6 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-/** The primary view of the ActionButtons component which use in the table cell  */
 export const Primary: Story = {
     args: {
         note: {
